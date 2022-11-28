@@ -1,0 +1,44 @@
+﻿@model IEnumerable<introduceMVC.Models.Product>
+
+
+
+    @{
+        //Razor: HTML ile birlikte C# dilini kullanarak bir template oluşturmanızı sağlayan bir teknik.
+    }
+    <h4>Burası; yeni yapılan Home.Index sayfası....</h4>
+    <p>
+        Hoş geldiniz @ViewBag.Ad, <br />
+        @ViewBag.Sehir 'e selamlar.
+        Saat şu an @ViewBag.Saat
+    </p>
+    <p>
+        @if (ViewBag.Saat >= 12)
+        {
+            <span>İyi günler</span>
+        }
+        else if (ViewBag.Saat >= 17)
+        {
+            <span>İyi akşamlar</span>
+        }
+        else
+        {
+            <span>Günaydın...</span>
+        }
+    </p>
+    <ul class="list-group">
+        @foreach (var sehir in ViewBag.Sehirler)
+        {
+            <li class="list-group-item">@sehir</li>
+        }
+    </ul>
+
+    <table class="table table-danger">
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+            </tr>
+        }
+    </table>

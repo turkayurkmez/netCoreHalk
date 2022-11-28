@@ -14,3 +14,27 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\introduceMVC\introduceMVC
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/turka/source/repos/Kurumsal/Halkbank/Intro MVC with .Net Core/introduceMVC/introduceMVC/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turka/source/repos/Kurumsal/Halkbank/Intro MVC with .Net Core/introduceMVC/introduceMVC/Views/Home/Connect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25uZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turka/source/repos/Kurumsal/Halkbank/Intro MVC with .Net Core/introduceMVC/introduceMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turka/source/repos/Kurumsal/Halkbank/Intro MVC with .Net Core/introduceMVC/introduceMVC/Views/Home/IndexOld.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleE9sZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turka/source/repos/Kurumsal/Halkbank/Intro MVC with .Net Core/introduceMVC/introduceMVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turka/source/repos/Kurumsal/Halkbank/Intro MVC with .Net Core/introduceMVC/introduceMVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
