@@ -1,0 +1,10 @@
+﻿@model eshop.Entities.Product
+
+<div class="card">
+    <img src="@Model.ImageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.Price (@Model.Description) </p>
+        <button class="btn btn-primary">Sepete Ekle</button>
+    </div>
+</div>

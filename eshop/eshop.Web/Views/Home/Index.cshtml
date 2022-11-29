@@ -1,0 +1,31 @@
+﻿@model IEnumerable<eshop.Entities.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    var count = 0;
+}
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        if (count != 0 && count % 3 == 0)
+        {
+            @:</div>
+            @:<div class="row">
+        }
+        <div class="col-4">
+            <partial name="_productCard" model="@product"/>
+        </div>
+        count++;
+    }
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    
+      @for (var i = 1; i <=ViewBag.TotalPage; i++)
+      {
+           <li class="page-item"><a asp-action="Index" asp-controller="Home" asp-route-pageNo="@i" asp-route-categoryId="@ViewBag.CategoryId" class="page-link">@i</a></li>
+      } 
+  
+  </ul>
+</nav>
