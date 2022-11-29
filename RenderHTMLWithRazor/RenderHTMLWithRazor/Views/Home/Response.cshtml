@@ -1,0 +1,30 @@
+﻿@model ResponseModel
+@{
+    ViewData["Title"] = "Response";
+}
+
+<h1>Response</h1>
+<form asp-action="Response" asp-controller="Home" method="post" >
+   <div >
+       <input class="form-control" asp-for="Name" placeholder="Adınız"  />
+       <span asp-validation-for="Name"></span>
+
+   </div>
+    <div>
+        <input class="form-control" asp-for="LastName" placeholder="Soyadınız" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <input class="form-control" asp-for="Email" placeholder="Eposta adresiniz...." />
+    </div>
+    <div>
+        <label>Katılacak mısınız?</label>
+        <select class="form-control" asp-for="IsParticipant">
+            <option value="">Seçiniz</option>
+            <option value="true">Evet</option>
+            <option value="false">Hayır</option>
+        </select>
+        <span asp-validation-for="IsParticipant"></span>
+    </div>
+    <button class="btn btn-success">Yanıt ver</button>
+</form>

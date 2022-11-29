@@ -1,0 +1,35 @@
+﻿@model RenderHTMLWithRazor.Models.ThanksViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+
+@if(Model.LastUserIsParticipant){
+    <h1>Süper haber!</h1>
+    <div class="alert alert-success">
+        <p>
+            Harika! Orada görüşmek üzere
+        </p>
+    </div>
+}
+else{
+    <h1>Ah be! Keşke gelseydin</h1>
+    <div class="alert alert-warning">
+        <p>
+           Üzüldük! Bir dahaki sefere :( 
+        </p>
+    </div>
+    <h3>Bak kimler geliyor:</h3>
+    <table class="table table-striped">
+        @foreach (var response in Model.Responses)
+        {
+            <tr>
+                <td>@response.Name</td>
+                <td>@response.Email</td>
+
+            </tr>
+        }
+    </table>
+}
