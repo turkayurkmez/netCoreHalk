@@ -34,10 +34,8 @@ namespace eshop.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public Product Get(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Product Get(int id) => _products.FirstOrDefault(p => p.Id == id);
+
 
         public IEnumerable<Product> GetAll()
         {

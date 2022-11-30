@@ -1,0 +1,46 @@
+﻿@model ShoppingCartCollection
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Sepetiniz</h1>
+@if (Model.Products.Count != 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th>Ürün Adı</th>
+                <th>Fiyatı</th>
+                <th>Adedi</th>
+                <th>Ara Toplam</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var productInCart in Model.Products)
+            {
+                <tr>
+                    <td>@productInCart.Product.Name</td>
+                    <td>@productInCart.Product.Price</td>
+                    <td>@productInCart.Quantity</td>
+                    <td>@(productInCart.Product.Price * productInCart.Quantity)</td>
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Toplam Tutar</td>
+                <td>@Model.GetTotalPrice() TL</td>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        Sepetinizde henüz ürün yok
+    </div>
+}

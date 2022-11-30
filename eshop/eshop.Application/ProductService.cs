@@ -12,6 +12,12 @@ namespace eshop.Application
             _productRepository = productRepository;
         }
 
+        public Product GetProduct(int id)
+        {
+            var product = _productRepository.Get(id);
+            return product;
+        }
+
         public List<Product> GetProducts()
         {
             var products = _productRepository.GetAll();

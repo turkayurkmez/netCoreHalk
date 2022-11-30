@@ -11,6 +11,8 @@ builder.Services.AddScoped<IProductRepository, FakeProductRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICategoryRepository, FakeCategoryRepository>();
 
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,9 +25,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSession();
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

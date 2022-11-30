@@ -29,3 +29,26 @@
   
   </ul>
 </nav>
+
+@section Scripts{
+    <script>
+      
+        $(document).ready(function(){
+            $('.addCart').on('click',function(){
+                let id = $(this).data('productid');
+                console.log("yakalanan ürün id'si: "+id);
+                $.ajax({
+                    url:'/ShoppingCart/AddProduct/'+id,
+                    dataType:'json',
+                    success: function(response){
+                        console.log("işlem tamam");
+                        console.log(response);
+                    },
+                    error: function(err){
+                        console.log(err)
+                    }
+                });
+            });
+        }) ;
+    </script>
+}

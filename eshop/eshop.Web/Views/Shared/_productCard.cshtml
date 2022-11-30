@@ -3,8 +3,12 @@
 <div class="card">
     <img src="@Model.ImageUrl" class="card-img-top" alt="...">
     <div class="card-body">
+
         <h5 class="card-title">@Model.Name</h5>
         <p class="card-text">@Model.Price (@Model.Description) </p>
-        <button class="btn btn-primary">Sepete Ekle</button>
+        <!-- <form method="get" asp-action="AddProduct" asp-controller="Cart" asp-route-productId="@Model.Id" asp-route-quantity="1"> -->
+            <button  class="btn btn-primary addCart" data-productid="@Model.Id" >Sepete Ekle</button>
+        <!-- </form>-->
+        <!-- AJAX: Asynchronous JavaScript AND XML -->
     </div>
 </div>
