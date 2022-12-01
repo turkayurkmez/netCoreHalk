@@ -12,6 +12,11 @@ namespace eshop.Application
             this.categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));
         }
 
+        public void AddCategory(Category category)
+        {
+            categoryRepository.Add(category);
+        }
+
         public IEnumerable<Category> GetCategories()
         {
             return categoryRepository.GetAll();

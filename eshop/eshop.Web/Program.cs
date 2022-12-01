@@ -1,15 +1,20 @@
 using eshop.Application;
+using eshop.DataAccess.Data;
 using eshop.DataAccess.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IProductRepository, FakeProductRepository>();
+builder.Services.AddScoped<IProductRepository, EFProductRepository>();
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-builder.Services.AddScoped<ICategoryRepository, FakeCategoryRepository>();
+builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
+
+var connectionString = builder.Configuration.GetConnectionString("db");
+builder.Services.AddDbContext<ShopDbContext>(option => option.UseSqlServer(connectionString));
 
 builder.Services.AddSession();
 
@@ -30,8 +35,32 @@ app.UseSession();
 app.UseRouting();
 app.UseAuthorization();
 
-app.MapControllerRoute(
+app.UseEndpoints(endpoints =>
+{
+
+    //Sayfa3
+
+
+
+
+    //endpoints.MapControllerRoute(
+    //    name: "category",
+    //    pattern: "{categoryId?}/Sayfa{pageNo}",
+    //    defaults: new { controller = "Home", action = "Index", pageNo = 1 }
+    //    );
+
+
+    endpoints.MapControllerRoute(
+        name: "paging",
+        pattern: "Sayfa{pageNo}",
+        defaults: new { controller = "Home", action = "Index", pageNo = 1 }
+        );
+
+
+    endpoints.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
 
 app.Run();

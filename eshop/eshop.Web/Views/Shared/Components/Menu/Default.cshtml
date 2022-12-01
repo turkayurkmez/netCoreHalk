@@ -3,7 +3,7 @@
     <a asp-action="Index" asp-controller="Home" class="list-group-item">Tüm Kategoriler</a>
     @foreach (var item in Model)
     {
-        <a asp-action="Index" asp-controller="Home" asp-route-categoryId="@item.Id" class="list-group-item">@item.Name</a>
+        <a asp-action="Index" asp-controller="Home" asp-route-categoryId="@item.Id" asp-route-pageNo="1" class="list-group-item">@item.Name</a>
     } 
    
   

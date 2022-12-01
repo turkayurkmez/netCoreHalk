@@ -1,7 +1,7 @@
 ﻿using eshop.Application;
+using eshop.Web.Extensions;
 using eshop.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace eshop.Web.Controllers
 {
@@ -34,7 +34,8 @@ namespace eshop.Web.Controllers
 
         private void saveToSession(ShoppingCartCollection cartCollection)
         {
-            HttpContext.Session.SetString("cart", JsonConvert.SerializeObject(cartCollection));
+            //HttpContext.Session.SetString("cart", JsonConvert.SerializeObject(cartCollection));
+            HttpContext.Session.SetJson("cart", cartCollection);
         }
 
         private ShoppingCartCollection getCollectionFromSession()
@@ -42,16 +43,18 @@ namespace eshop.Web.Controllers
             //Eğer ilk kez sepete ürün ekleniyorsa;
             //ShoppingCartCollection nesnesini oluştur ve session nesnesine kaydet.
             //Daha önce sepete ürün eklenmiş ise; o zaman session nesnesinden ShoppingCart'ı oku.
-            ShoppingCartCollection shoppingCartCollection = null;
-            if (HttpContext.Session.GetString("cart") == null)
-            {
-                shoppingCartCollection = new ShoppingCartCollection();
-                HttpContext.Session.SetString("cart", JsonConvert.SerializeObject(shoppingCartCollection));
+            //ShoppingCartCollection shoppingCartCollection = null;
+            //if (HttpContext.Session.GetString("cart") == null)
+            //{
+            //    shoppingCartCollection = new ShoppingCartCollection();
+            //    HttpContext.Session.SetString("cart", JsonConvert.SerializeObject(shoppingCartCollection));
 
-            }
+            //}
 
-            string serialized = HttpContext.Session.GetString("cart");
-            var registeredShoppingCard = JsonConvert.DeserializeObject<ShoppingCartCollection>(serialized);
+            // string serialized = HttpContext.Session.GetString("cart");
+            //Not: Yukarıdaki işlemi; extension metot ile icra ettik... Ayrıntılar için SessionExtensions.cs dosyasına bakınız:
+            var registeredShoppingCard = HttpContext.Session.GetJson<ShoppingCartCollection>("cart") ?? new ShoppingCartCollection();
+
             return registeredShoppingCard;
 
 
