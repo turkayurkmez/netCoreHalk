@@ -1,4 +1,5 @@
-﻿using eshop.DataAccess.Repositories;
+﻿using eshop.Application.DTOs.Requests;
+using eshop.DataAccess.Repositories;
 using eshop.Entities;
 
 namespace eshop.Application
@@ -28,6 +29,46 @@ namespace eshop.Application
         {
             var products = _productRepository.SearchProductsByCategoryId(value);
             return products.ToList();
+        }
+
+        public int CreateNewProduct(CreateNewProductRequest product)
+        {
+            var productEntity = new Product
+            {
+                CategoryId = product.CategoryId,
+                Description = product.Description,
+                Features = product.Features,
+                ImageUrl = product.ImageUrl,
+                Name = product.Name,
+                Price = product.Price,
+                Stock = product.Stock
+            };
+            _productRepository.Add(productEntity);
+            return productEntity.Id;
+
+        }
+        public void UpdateProduct(UpdateExistingProductRequest updateRequest)
+        {
+            var product = new Product
+            {
+                Id = updateRequest.Id,
+                CategoryId = updateRequest.CategoryId,
+                Description = updateRequest.Description,
+                Features = updateRequest.Features,
+                ImageUrl = updateRequest.ImageUrl,
+                Name = updateRequest.Name,
+                Price = updateRequest.Price,
+                Stock = updateRequest.Stock
+
+            };
+            _productRepository.Update(product);
+        }
+
+        public void DeleteProductFromDb(int id) => _productRepository.Delete(id);
+
+        public bool ProductIsExist(int id)
+        {
+            return _productRepository.IsExists(id);
         }
     }
 }

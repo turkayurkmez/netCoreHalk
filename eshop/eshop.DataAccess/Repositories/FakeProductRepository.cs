@@ -44,6 +44,11 @@ namespace eshop.DataAccess.Repositories
 
         }
 
+        public bool IsExists(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Product> SearchProductsByCategoryId(int categoryId)
         {
             return _products.Where(p => p.CategoryId == categoryId).ToList();

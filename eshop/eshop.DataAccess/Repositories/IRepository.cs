@@ -10,5 +10,7 @@ namespace eshop.DataAccess.Repositories
         void Delete(int id);
         void Update(T entity);
 
+        bool IsExists(int id);
+
     }
 }

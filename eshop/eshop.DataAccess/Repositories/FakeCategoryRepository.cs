@@ -31,6 +31,11 @@ namespace eshop.DataAccess.Repositories
             };
         }
 
+        public bool IsExists(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Category entity)
         {
             throw new NotImplementedException();

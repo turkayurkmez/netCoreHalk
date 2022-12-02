@@ -1,4 +1,5 @@
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\bin\Debug\net6.0\eshop.DataAccess.deps.json
+C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\bin\Debug\net6.0\eshop.DataAccess.runtimeconfig.json
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\bin\Debug\net6.0\eshop.DataAccess.dll
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\bin\Debug\net6.0\eshop.DataAccess.pdb
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\bin\Debug\net6.0\eshop.Entities.dll
@@ -12,6 +13,5 @@ C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\esh
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\obj\Debug\net6.0\eshop.DataAccess.dll
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\obj\Debug\net6.0\refint\eshop.DataAccess.dll
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\obj\Debug\net6.0\eshop.DataAccess.pdb
-C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\obj\Debug\net6.0\ref\eshop.DataAccess.dll
-C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\bin\Debug\net6.0\eshop.DataAccess.runtimeconfig.json
 C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\obj\Debug\net6.0\eshop.DataAccess.genruntimeconfig.cache
+C:\Users\turka\source\repos\Kurumsal\Halkbank\Intro MVC with .Net Core\eshop\eshop.DataAccess\obj\Debug\net6.0\ref\eshop.DataAccess.dll

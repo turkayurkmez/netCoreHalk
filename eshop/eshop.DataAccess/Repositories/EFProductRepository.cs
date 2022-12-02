@@ -14,22 +14,30 @@ namespace eshop.DataAccess.Repositories
 
         public void Add(Product entity)
         {
-            throw new NotImplementedException();
+            shopDbContext.Products.Add(entity);
+            shopDbContext.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var product = Get(id);
+            shopDbContext.Products.Remove(product);
+            shopDbContext.SaveChanges();
         }
 
         public Product Get(int id)
         {
-            return shopDbContext.Products.FirstOrDefault(p => p.Id == id);
+            return shopDbContext.Products.Find(id);
         }
 
         public IEnumerable<Product> GetAll()
         {
             return shopDbContext.Products.ToList();
+        }
+
+        public bool IsExists(int id)
+        {
+            return shopDbContext.Products.Any(p => p.Id == id);
         }
 
         public IEnumerable<Product> SearchProductsByCategoryId(int categoryName)
@@ -39,12 +47,14 @@ namespace eshop.DataAccess.Repositories
 
         public IEnumerable<Product> SearchProductsByName(string name)
         {
-            throw new NotImplementedException();
+            return shopDbContext.Products.Where(p => p.Name.Contains(name));
         }
 
         public void Update(Product entity)
         {
-            throw new NotImplementedException();
+            //var existingProduct = shopDbContext.Products.Find(entity.Id);
+            shopDbContext.Products.Update(entity);
+            shopDbContext.SaveChanges();
         }
     }
 }

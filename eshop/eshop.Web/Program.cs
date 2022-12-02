@@ -1,6 +1,7 @@
 using eshop.Application;
 using eshop.DataAccess.Data;
 using eshop.DataAccess.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,11 +13,20 @@ builder.Services.AddScoped<IProductRepository, EFProductRepository>();
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
+builder.Services.AddSingleton<IUserService, UserService>();
 
 var connectionString = builder.Configuration.GetConnectionString("db");
 builder.Services.AddDbContext<ShopDbContext>(option => option.UseSqlServer(connectionString));
 
 builder.Services.AddSession();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = "/Accounts/Login";
+                    option.AccessDeniedPath = "/Accounts/AccessDenied";
+
+                });
 
 var app = builder.Build();
 
@@ -33,6 +43,8 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseRouting();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

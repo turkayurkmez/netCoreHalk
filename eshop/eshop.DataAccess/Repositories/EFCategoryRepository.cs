@@ -33,6 +33,11 @@ namespace eshop.DataAccess.Repositories
             return shopDbContext.Categories.ToList();
         }
 
+        public bool IsExists(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Category entity)
         {
             throw new NotImplementedException();

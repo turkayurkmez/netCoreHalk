@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnProducts">Ürünleri Getir</button>
+    <ul id="products"></ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btnProducts').on('click',function () {
+                let username='test';
+                let pass='pass';
+               $.ajax({
+                url:'https://localhost:7097/api/Products',
+                beforeSend: function (xhr) {
+    xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImluZm9AdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIm5iZiI6MTY2OTk4Mzk1NCwiZXhwIjoxNjY5OTg3NTU0LCJpc3MiOiJodHRwczovL2lkZW50aXR5LmhhbGtiYW5rLmNvbS50ciIsImF1ZCI6Imh0dHBzOi8vY2xpZW50LmhhbGtiYW5rLmNvbS50ciJ9.AvO46Epg3pMzuZeG0N5howqRewp-jgzOWRzAN6AfNVw');
+},
+                type:'GET',
+                dataType:'json',
+                success:function(data){
+                    console.log(data);
+                    $.each(data, function (index,element) {
+                        let li = $('<li>'+element.name+ ' ' + element.price +'</li>');
+                        $('#products').append(li);
+                    })
+                }
+               }); 
+            });
+        });
+    </script>
+
+</body>
+</html>
